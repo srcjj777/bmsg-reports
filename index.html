@@ -12,11 +12,36 @@ header{text-align:center;padding:30px 0 20px;border-bottom:1px solid #30363d;mar
 header h1{color:#58a6ff;font-size:24px;margin-bottom:4px}
 header p{color:#8b949e;font-size:14px}
 .frog{font-size:40px}
-.report-link{display:flex;align-items:center;gap:6px;padding:14px;background:#21262d;border-radius:8px;color:#e6edf3;text-decoration:none;border:1px solid #30363d;font-size:15px;transition:all .15s}
+
+/* 日期区块 */
+.date-group{margin:10px 0;padding:15px;background:#161b22;border-radius:10px;border:1px solid #30363d}
+.date-group h2{color:#f0883e;font-size:15px;margin-bottom:10px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.report-link{display:flex;align-items:center;gap:6px;padding:10px 12px;background:#21262d;border-radius:8px;color:#e6edf3;text-decoration:none;border:1px solid #30363d;font-size:13px;transition:all .15s}
 .report-link:hover{background:#30363d;border-color:#58a6ff}
-.tag{display:inline-block;padding:3px 10px;border-radius:4px;font-size:12px;font-weight:600}
+.tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:600;white-space:nowrap}
+.tag-attack{background:#da3633;color:white}
+.tag-ambush{background:#d29922;color:white}
 .tag-shortterm0{background:#8b5cf6;color:white}
+
+/* 折叠区 */
+.older-section{margin:10px 0}
+.older-toggle{width:100%;padding:12px;background:#21262d;border:1px solid #30363d;border-radius:10px;color:#8b949e;font-size:14px;cursor:pointer;text-align:center;transition:all .15s}
+.older-toggle:hover{background:#30363d;color:#e6edf3;border-color:#58a6ff}
+.older-list{display:none;margin-top:8px;padding:10px;background:#161b22;border:1px solid #30363d;border-radius:10px}
+.older-list.show{display:block}
+.older-item{display:block;padding:8px 12px;color:#8b949e;text-decoration:none;font-size:13px;border-radius:6px;transition:all .1s;margin:2px 0}
+.older-item:hover{background:#21262d;color:#e6edf3}
+.older-date{color:#f0883e;margin-right:8px}
+
+/* 统计 */
+.stats-bar{display:flex;gap:12px;margin:15px 0;flex-wrap:wrap}
+.stat-card{flex:1;min-width:100px;padding:12px;background:#161b22;border-radius:10px;border:1px solid #30363d;text-align:center}
+.stat-card .num{color:#58a6ff;font-size:22px;font-weight:700}
+.stat-card .label{color:#8b949e;font-size:12px;margin-top:4px}
+
 footer{text-align:center;padding:20px;color:#484f58;font-size:12px;border-top:1px solid #30363d;margin-top:30px}
+@media(max-width:480px){.links{grid-template-columns:1fr}.container{padding:12px}}
 </style>
 </head>
 <body>
@@ -26,8 +51,15 @@ footer{text-align:center;padding:20px;color:#484f58;font-size:12px;border-top:1p
 <h1>BMSG 北冥神功</h1>
 <p>A股每日量化扫描报告</p>
 </header>
-<div class="report-link"><span class="tag tag-shortterm0">短线0</span> <span style="color:#f0883e;">2026-05-11</span> 盘后扫描报告</a>
+
+<div class="stats-bar">
+<div class="stat-card"><div class="num">1</div><div class="label">报告天数</div></div>
+<div class="stat-card"><div class="num">4</div><div class="label">报告文件</div></div>
 </div>
+<div class="date-group"><h2>📅 2026-05-11</h2><div class="links">
+<a class="report-link" href="2026-05-11/盘后_短线0_暗色.html"><span class="tag tag-shortterm0">短线0</span></a>
+<a class="report-link" href="2026-05-11/盘后_短线0_暗色.html"><span class="tag tag-shortterm0">短线0</span></a>
+</div></div>
 <footer>BMSG Bot · 数据仅供参考，不构成投资建议</footer>
 </div>
 </body>
