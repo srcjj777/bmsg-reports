@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMSG扫描报告(暗色) - 2026-05-17 07:51</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #1a1a1a;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: #2d2d2d;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            color: #aaa;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #3a3a3a 0%, #2a2a2a 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+        .stat-card.S { background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%); }
+        .stat-card.A { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .stat-card.B { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .stat-card.C { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+        .stat-number {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            font-size: 20px;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #444;
+        }
+        .chart-container {
+            background: #3a3a3a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 13px;
+        }
+        th {
+            background: #3a3a3a;
+            padding: 10px 8px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #555;
+            font-size: 12px;
+            white-space: nowrap;
+            color: #e0e0e0;
+        }
+        td {
+            padding: 8px;
+            border-bottom: 1px solid #444;
+            font-size: 12px;
+            white-space: nowrap;
+            color: #c0c0c0;
+        }
+        tr:hover {
+            background: #3a3a3a;
+        }
+        .grade-S {
+            color: #FF6B35;
+            font-weight: bold;
+        }
+        .grade-A {
+            color: #f5576c;
+            font-weight: bold;
+        }
+        .grade-B {
+            color: #00f2fe;
+            font-weight: bold;
+        }
+        .grade-C {
+            color: #43e97b;
+            font-weight: bold;
+        }
+        .code {
+            font-family: monospace;
+            background: #4a4a4a;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            color: #e0e0e0;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .container { padding: 15px; }
+            h1 { font-size: 20px; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            th, td { font-size: 11px; padding: 6px 4px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 BMSG 扫描报告</h1>
+        <div class="subtitle">生成时间: 2026-05-17 07:51 | 策略: post_market_shortterm0 | 时段: 盘前 | 数据日期: 2026-05-15</div>
+        <div class="section">
+            <div class="stats">
+                <div class="stat-card S"><div class="stat-number">0</div><div class="stat-label">S级 (90+)</div></div>
+                <div class="stat-card A"><div class="stat-number">20</div><div class="stat-label">A级 (80-89)</div></div>
+                <div class="stat-card B"><div class="stat-number">0</div><div class="stat-label">B级 (70-79)</div></div>
+                <div class="stat-card C"><div class="stat-number">0</div><div class="stat-label">C级 (60-69)</div></div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">📊 评分分布与Top 10</div>
+            <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+                <div class="chart-container" style="flex: 1; min-width: 300px;">
+                    <div style="text-align: center; margin-bottom: 15px; font-size: 16px; font-weight: bold; color: #e0e0e0;">评分分布</div>
+                    <div style="display: flex; justify-content: center; align-items: flex-end; height: 250px; gap: 30px;"><div style="display: flex; flex-direction: column; align-items: center; margin: 0 15px;"><div style="font-size: 24px; font-weight: bold; margin-bottom: 10px; color: white;">0</div><div style="width: 60px; height: 0px; background: linear-gradient(180deg, #FF6B35 0%, #FF8C42 100%); border-radius: 4px 4px 0 0; transition: all 0.3s;"></div><div style="margin-top: 10px; font-size: 14px; text-align: center; color: #aaa;">S级 (90+)</div></div><div style="display: flex; flex-direction: column; align-items: center; margin: 0 15px;"><div style="font-size: 24px; font-weight: bold; margin-bottom: 10px; color: white;">20</div><div style="width: 60px; height: 200px; background: linear-gradient(180deg, #f093fb 0%, #f5576c 100%); border-radius: 4px 4px 0 0; transition: all 0.3s;"></div><div style="margin-top: 10px; font-size: 14px; text-align: center; color: #aaa;">A级 (80-89)</div></div><div style="display: flex; flex-direction: column; align-items: center; margin: 0 15px;"><div style="font-size: 24px; font-weight: bold; margin-bottom: 10px; color: white;">0</div><div style="width: 60px; height: 0px; background: linear-gradient(180deg, #4facfe 0%, #00f2fe 100%); border-radius: 4px 4px 0 0; transition: all 0.3s;"></div><div style="margin-top: 10px; font-size: 14px; text-align: center; color: #aaa;">B级 (70-79)</div></div><div style="display: flex; flex-direction: column; align-items: center; margin: 0 15px;"><div style="font-size: 24px; font-weight: bold; margin-bottom: 10px; color: white;">0</div><div style="width: 60px; height: 0px; background: linear-gradient(180deg, #43e97b 0%, #38f9d7 100%); border-radius: 4px 4px 0 0; transition: all 0.3s;"></div><div style="margin-top: 10px; font-size: 14px; text-align: center; color: #aaa;">C级 (60-69)</div></div></div>
+                </div>
+                <div class="chart-container" style="flex: 2; min-width: 500px;">
+                    <div style="text-align: center; margin-bottom: 15px; font-size: 16px; font-weight: bold; color: #e0e0e0;">Top 10 候选股</div>
+                    <div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">1</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">海信家电</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 100%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">67.7</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">2</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">元隆雅图</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 99%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">67.5</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">3</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">丰林集团</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 99%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">67.2</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">4</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">弘讯科技</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 97%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">66.2</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">5</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">博科测试</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 95%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">64.5</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">6</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">致欧科技</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 94%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">64.1</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">7</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">怡合达</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 94%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">64.0</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">8</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">纽威股份</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 93%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">63.6</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">9</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">凯盛新材</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 93%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">63.5</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">10</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">银宝山新</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 93%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">63.5</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">11</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">飞荣达</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 92%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">62.7</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">12</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">东华测试</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 92%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">62.6</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">13</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">远东传动</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 92%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">62.5</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">14</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">杭齿前进</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 92%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">62.5</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">15</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">正和生态</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 91%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">62.1</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">16</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">思林杰</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 91%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">62.1</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">17</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">大丰实业</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 91%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">62.0</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">18</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">腾亚精工</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 91%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">61.7</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">19</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">国安股份</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 90%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">61.3</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div><div style="display: flex; align-items: center; margin-bottom: 8px;"><div style="width: 40px; font-size: 14px; color: #aaa;">20</div><div style="width: 100px; font-size: 14px; font-weight: bold; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: white;">新城市</div><div style="flex: 1; background: #333; height: 24px; border-radius: 12px; overflow: hidden;"><div style="width: 90%; height: 100%; background: linear-gradient(90deg, #f093fb 0%, #f5576c 100%); border-radius: 12px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold;">61.1</div></div><div style="width: 40px; text-align: right; font-size: 14px; font-weight: bold; color: #f5576c; margin-left: 8px;">A</div></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">📈 市场情绪</div>
+            <div class="chart-container"><div style="text-align: center; padding:20px;"><div style="font-size: 48px; font-weight: bold; color: #43e97b;">35.8</div><div style="font-size: 18px; color: #aaa; margin-top: 10px;">市场情绪指数</div><div style="font-size: 14px; color: #888; margin-top: 5px;">低迷</div></div></div>
+        </div>
+        <div class="section">
+            <div class="section-title">💰 资金流向</div>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <div class="chart-container" style="flex: 1; min-width: 300px;">
+                    <div style="color:#f5576c; font-weight:bold; margin-bottom:8px;">🐝 沪市主力资金净流入</div>
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="font-size: 36px; font-weight: bold; color: #43e97b; margin-bottom: 10px;">-546.0亿</div>
+                        <div style="color: #aaa; font-size: 13px;">上证A股当日主力净流入（NeoData API）</div>
+                    </div>
+                </div>
+                <div class="chart-container" style="flex: 1; min-width: 300px;">
+                    <div style="color:#f5576c; font-weight:bold; margin-bottom:8px;">📊 样本股主力资金</div>
+                    <div style="text-align: center; padding: 20px;">
+                        <div style="font-size: 36px; font-weight: bold; color: #43e97b; margin-bottom: 10px;">-22.7亿</div>
+                        <div style="color: #aaa; font-size: 13px;">样本股主力资金净流入</div>
+                        <div style="color: #888; font-size: 12px; margin-top: 6px;">中际旭创、澜起科技、天孚通信、阳光电源、工业富联</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section-title">📋 完整数据表格 (共 20 只)</div>
+            <div class="table-container">
+            <table>
+                <tr>
+                    <th>排名</th>
+                    <th>代码</th>
+                    <th>名称</th>
+                    <th>行业</th>
+                    <th>概念</th>
+                    <th>评分</th>
+                    <th>等级</th>
+                    <th>涨幅%</th>
+                    <th>成交额(亿)</th>
+                    <th>主力资金(亿)</th>
+                    <th>MA5偏离%</th>
+                    <th>信号</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><span class="code">sz000921</span></td>
+                    <td><strong>海信家电</strong></td>
+                    <td>家电行业</td>
+                    <td>高股息精选, 家用电器, 空气能热泵 等5个</td>
+                    <td><strong>67.7</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+3.82%</td>
+                    <td>3.55</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>0.8%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><span class="code">sz002878</span></td>
+                    <td><strong>元隆雅图</strong></td>
+                    <td>文化传媒</td>
+                    <td>冰雪产业, 短剧游戏, 快手概念 等5个</td>
+                    <td><strong>67.5</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+3.87%</td>
+                    <td>4.73</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>1.5%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><span class="code">sh601996</span></td>
+                    <td><strong>丰林集团</strong></td>
+                    <td>木业家具</td>
+                    <td>土地流转</td>
+                    <td><strong>67.2</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+10.11%</td>
+                    <td>2.49</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>1.4%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><span class="code">sh603015</span></td>
+                    <td><strong>弘讯科技</strong></td>
+                    <td>专用设备</td>
+                    <td>N/A</td>
+                    <td><strong>66.2</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+3.26%</td>
+                    <td>1.62</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>1.5%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><span class="code">sz301598</span></td>
+                    <td><strong>博科测试</strong></td>
+                    <td>专用设备</td>
+                    <td>小米汽车</td>
+                    <td><strong>64.5</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+4.02%</td>
+                    <td>0.84</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>2.2%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><span class="code">sz301376</span></td>
+                    <td><strong>致欧科技</strong></td>
+                    <td>家用轻工</td>
+                    <td>宠物经济, 创投, 跨境电商 等5个</td>
+                    <td><strong>64.1</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+4.17%</td>
+                    <td>1.11</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>2.5%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><span class="code">sz301029</span></td>
+                    <td><strong>怡合达</strong></td>
+                    <td>机械行业</td>
+                    <td>传感器, 高端装备, 共封装光学(CPO) 等5个</td>
+                    <td><strong>64.0</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+6.95%</td>
+                    <td>8.68</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>3.3%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><span class="code">sh603699</span></td>
+                    <td><strong>纽威股份</strong></td>
+                    <td>机械行业</td>
+                    <td>可控核聚变,页岩气</td>
+                    <td><strong>63.6</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+5.16%</td>
+                    <td>6.48</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>2.0%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><span class="code">sz301069</span></td>
+                    <td><strong>凯盛新材</strong></td>
+                    <td>化学原料</td>
+                    <td>PEEK材料,3D打印</td>
+                    <td><strong>63.5</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+5.1%</td>
+                    <td>6.4</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>2.3%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td><span class="code">sz002786</span></td>
+                    <td><strong>银宝山新</strong></td>
+                    <td>专用设备</td>
+                    <td>比亚迪概念, 宁德时代概念, 大飞机 等5个</td>
+                    <td><strong>63.5</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+6.32%</td>
+                    <td>3.0</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>4.3%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td><span class="code">sz300602</span></td>
+                    <td><strong>飞荣达</strong></td>
+                    <td>消费电子</td>
+                    <td>AI PC, 长安汽车概念, 富士康概念 等5个</td>
+                    <td><strong>62.7</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+1.23%</td>
+                    <td>10.77</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>0.8%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td><span class="code">sz300354</span></td>
+                    <td><strong>东华测试</strong></td>
+                    <td>仪器仪表</td>
+                    <td>超级电容</td>
+                    <td><strong>62.6</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+5.67%</td>
+                    <td>2.22</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>1.9%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td><span class="code">sz002406</span></td>
+                    <td><strong>远东传动</strong></td>
+                    <td>汽车零部件</td>
+                    <td>N/A</td>
+                    <td><strong>62.5</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+4.33%</td>
+                    <td>6.07</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>3.3%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td><span class="code">sh601177</span></td>
+                    <td><strong>杭齿前进</strong></td>
+                    <td>机械行业</td>
+                    <td>N/A</td>
+                    <td><strong>62.5</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+5.53%</td>
+                    <td>4.06</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>1.6%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td><span class="code">sh605069</span></td>
+                    <td><strong>正和生态</strong></td>
+                    <td>环保工程</td>
+                    <td>土壤修复</td>
+                    <td><strong>62.1</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+3.65%</td>
+                    <td>1.48</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>3.1%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td><span class="code">sh688115</span></td>
+                    <td><strong>思林杰</strong></td>
+                    <td>仪器仪表</td>
+                    <td>WiFi 6</td>
+                    <td><strong>62.1</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+3.96%</td>
+                    <td>1.09</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>1.7%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td><span class="code">sh603081</span></td>
+                    <td><strong>大丰实业</strong></td>
+                    <td>专用设备</td>
+                    <td>N/A</td>
+                    <td><strong>62.0</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+5.57%</td>
+                    <td>2.91</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>4.2%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td><span class="code">sz301125</span></td>
+                    <td><strong>腾亚精工</strong></td>
+                    <td>通用设备</td>
+                    <td>N/A</td>
+                    <td><strong>61.7</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+4.65%</td>
+                    <td>1.33</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>0.9%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td><span class="code">sz000839</span></td>
+                    <td><strong>国安股份</strong></td>
+                    <td>综合行业</td>
+                    <td>AI语料,足球概念</td>
+                    <td><strong>61.3</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+6.5%</td>
+                    <td>11.81</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>2.1%</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td><span class="code">sz300778</span></td>
+                    <td><strong>新城市</strong></td>
+                    <td>工程咨询服务</td>
+                    <td>N/A</td>
+                    <td><strong>61.1</strong></td>
+                    <td><span class="grade-A">A</span></td>
+                    <td style="color: #f5576c;">+5.22%</td>
+                    <td>1.56</td>
+                    <td style="color: #43e97b;">0.0</td>
+                    <td>3.1%</td>
+                    <td>✓</td>
+                </tr>
+            </table>
+            </div>
+        </div>
+    </div>
+        <div class="section">
+            <div class="section-title">📊 今日主线（行业/概念涨幅 Top3）</div>
+            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <div class="chart-container" style="flex: 1; min-width: 300px;">
+                    <div style="font-size: 16px; font-weight: bold; color: #e0e0e0; margin-bottom: 15px;">🏭 行业涨幅 Top3</div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 100px; font-size: 13px; color: #ccc; text-align: right; padding-right: 10px;">国防军工</div>
+                        <div style="flex: 1; background: #444; height: 20px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 93%; height: 100%; background: #f5576c; border-radius: 4px;"></div>
+                        </div>
+                        <div style="width: 60px; font-size: 13px; color: #f5576c; text-align: right; padding-left: 8px;">+9.36%</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 100px; font-size: 13px; color: #ccc; text-align: right; padding-right: 10px;">电子</div>
+                        <div style="flex: 1; background: #444; height: 20px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 54%; height: 100%; background: #f5576c; border-radius: 4px;"></div>
+                        </div>
+                        <div style="width: 60px; font-size: 13px; color: #f5576c; text-align: right; padding-left: 8px;">+5.43%</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 100px; font-size: 13px; color: #ccc; text-align: right; padding-right: 10px;">电机</div>
+                        <div style="flex: 1; background: #444; height: 20px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 36%; height: 100%; background: #f5576c; border-radius: 4px;"></div>
+                        </div>
+                        <div style="width: 60px; font-size: 13px; color: #f5576c; text-align: right; padding-left: 8px;">+3.69%</div>
+                    </div>
+                </div>
+                <div class="chart-container" style="flex: 1; min-width: 300px;">
+                    <div style="font-size: 16px; font-weight: bold; color: #e0e0e0; margin-bottom: 15px;">💡 概念涨幅 Top3</div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 100px; font-size: 13px; color: #ccc; text-align: right; padding-right: 10px;">工业母机</div>
+                        <div style="flex: 1; background: #444; height: 20px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 27%; height: 100%; background: #f5576c; border-radius: 4px;"></div>
+                        </div>
+                        <div style="width: 60px; font-size: 13px; color: #f5576c; text-align: right; padding-left: 8px;">+2.79%</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 100px; font-size: 13px; color: #ccc; text-align: right; padding-right: 10px;">减速器</div>
+                        <div style="flex: 1; background: #444; height: 20px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 27%; height: 100%; background: #f5576c; border-radius: 4px;"></div>
+                        </div>
+                        <div style="width: 60px; font-size: 13px; color: #f5576c; text-align: right; padding-left: 8px;">+2.78%</div>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                        <div style="width: 100px; font-size: 13px; color: #ccc; text-align: right; padding-right: 10px;">芯片概念</div>
+                        <div style="flex: 1; background: #444; height: 20px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: 24%; height: 100%; background: #f5576c; border-radius: 4px;"></div>
+                        </div>
+                        <div style="width: 60px; font-size: 13px; color: #f5576c; text-align: right; padding-left: 8px;">+2.46%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
